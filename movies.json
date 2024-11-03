@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1and3011",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUzNTE2NTkzMV5BMl5BanBnXkFtZTgwMDAzOTUyMDI@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+    "title": "Inferno",
+    "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cupiditate consequuntur mollitia veniam voluptates sunt quos illo accusamus fugit eius tenetur necessitatibus, voluptatibus placeat, numquam quod vero provident debitis beatae?",
+    "rating": 5.3
+  },
+  {
+    "id": "2301abc",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY1000_CR0,0,677,1000_AL_.jpg",
+    "title": "Star Wars: Episode VII - The Force Awakens",
+    "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti natus voluptatem quod dolorem fugiat enim minus provident excepturi explicabo. Molestiae sequi sunt recusandae itaque illo explicabo! Amet nulla doloribus error!",
+    "rating": 8.2
+  },
+  {
+    "id": "5345ahg",
+    "imageURL": "https://m.media-amazon.com/images/M/MV5BZGIxMTU1MjItM2FmMi00YmFiLTgwNDMtMTczYmVjYTBhNGZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "title": "Venom",
+    "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti natus voluptatem quod dolorem fugiat enim minus provident excepturi explicabo. Molestiae sequi sunt recusandae itaque illo explicabo! Amet nulla doloribus error!",
+    "rating": 6.8
+  },
+  {
+    "id": "876zgj",
+    "imageURL": "https://m.media-amazon.com/images/M/MV5BNTRlNmU1NzEtODNkNC00ZGM3LWFmNzQtMjBlMWRiYTcyMGRhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "title": "Joker: Folie à Deux",
+    "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti natus voluptatem quod dolorem fugiat enim minus provident excepturi explicabo. Molestiae sequi sunt recusandae itaque illo explicabo! Amet nulla doloribus error!",
+    "rating": 5.7
+  },
+  {
+    "id": "045lgh",
+    "imageURL": "https://m.media-amazon.com/images/M/MV5BZWNjZWUwNDgtYTM4ZC00Zjk0LTg3ZWItNGEyZmVkZTIxZDk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "title": "Bad Boys: Ride or Die",
+    "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti natus voluptatem quod dolorem fugiat enim minus provident excepturi explicabo. Molestiae sequi sunt recusandae itaque illo explicabo! Amet nulla doloribus error!",
+    "rating": 7.5
+  }
+]
