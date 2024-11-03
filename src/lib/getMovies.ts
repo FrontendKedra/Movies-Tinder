@@ -1,4 +1,4 @@
-import { MovieSugestion } from "../types/moviesSugestion";
+import { MovieSuggestion } from "../types/movieSuggestion";
 import { wait } from "./wait";
 
 export const getMoviesSugestion = async () => {
@@ -10,7 +10,7 @@ export const getMoviesSugestion = async () => {
     throw new Error(response.statusText);
   }
 
-  const data = (await response.json()) as MovieSugestion[];
+  const data = (await response.json()) as MovieSuggestion[];
 
   return data;
 };
