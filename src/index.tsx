@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import './index.css';
+import './mockPutApi';
 import reportWebVitals from './reportWebVitals';
+import { QueryClient, QueryClientProvider } from "react-query";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 10,
+      cacheTime: 1000 * 60 * 5,
+    },
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root") as Element);
+
 root.render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
     <App />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
