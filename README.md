@@ -1,6 +1,17 @@
+# Movies-Tinder
+
+## Description:
+
+A project created for Rumble Fish Software Development. Allows user to accept or reject movie suggestions either through button clicks or left swipe. It contains mocked backend with json file in public. Also has a mocked backend put call with the result of user's choice.
+
 ## Demo: 
 
 https://frontendkedra.github.io/Movies-Tinder/
+
+## Preview:
+
+![image](https://github.com/user-attachments/assets/8c413a5e-c68d-401c-a067-966a64bafdc0)
+
 
 # Getting Started with Create React App
 
