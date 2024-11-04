@@ -1,10 +1,44 @@
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
+function createMockResponse(status: number): Response {
+  return {
+    ok: status >= 200 && status < 300,
+    status,
+    statusText: status === 200 ? "OK" : "Error",
+    url: "",
+    redirected: false,
+    type: "default",
+    headers: new Headers(),
+    clone: () => createMockResponse(status),
+    body: null,
+    bodyUsed: false,
+    json: async () => ({}),
+    text: async () => "",
+    arrayBuffer: async () => new ArrayBuffer(0),
+    blob: async () => new Blob(),
+    formData: async () => new FormData(),
+  } as Response;
+}
 
-const mock = new MockAdapter(axios);
+global.fetch = (
+  url: URL | RequestInfo,
+  options?: RequestInit
+): Promise<Response> => {
+  const urlString = typeof url === "string" ? url : url.toString();
 
-// Mock the PUT requests for accept/reject
-mock.onPut(/\/recommendations\/.+\/accept/).reply(200);
-mock.onPut(/\/recommendations\/.+\/reject/).reply(200);
+  if (
+    urlString.match(/\/recommendations\/.+\/accept/) &&
+    options?.method === "PUT"
+  ) {
+    return Promise.resolve(createMockResponse(200));
+  }
 
-export default mock;
+  if (
+    urlString.match(/\/recommendations\/.+\/reject/) &&
+    options?.method === "PUT"
+  ) {
+    return Promise.resolve(createMockResponse(200));
+  }
+
+  return Promise.reject(new Error("Not implemented in mock"));
+};
+
+export default global.fetch;

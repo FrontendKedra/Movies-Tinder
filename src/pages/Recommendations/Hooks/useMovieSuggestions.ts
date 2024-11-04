@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "react-query";
-import axios from "axios";
-import { getMoviesSugestion } from "../../../lib/getMovies";
+import { getMoviesSuggestion } from "../../../lib/getMovies";
 
 export const useMovieSuggestions = () => {
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   const { isLoading, data, isError } = useQuery(
     "movieDetails",
-    getMoviesSugestion
+    getMoviesSuggestion
   );
 
   const showNextMovie = () => {
@@ -16,7 +15,14 @@ export const useMovieSuggestions = () => {
   };
 
   const approveMovieMutation = useMutation<void, unknown, string>(
-    (movieId: string) => axios.put(`/recommendations/${movieId}/accept`),
+    async (movieId: string) => {
+      const response = await fetch(`/recommendations/${movieId}/accept`, {
+        method: "PUT",
+      });
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+    },
     {
       onSuccess: () => {
         console.log("Movie suggestion approved");
@@ -29,7 +35,14 @@ export const useMovieSuggestions = () => {
   );
 
   const rejectMovieMutation = useMutation<void, unknown, string>(
-    (movieId: string) => axios.put(`/recommendations/${movieId}/reject`),
+    async (movieId: string) => {
+      const response = await fetch(`/recommendations/${movieId}/reject`, {
+        method: "PUT",
+      });
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+    },
     {
       onSuccess: () => {
         console.log("Movie suggestion rejected");
