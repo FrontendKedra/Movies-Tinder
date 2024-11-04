@@ -1,7 +1,7 @@
 import { MovieSuggestion } from "../types/movieSuggestion";
 import { wait } from "./wait";
 
-export const getMoviesSugestion = async () => {
+export const getMoviesSuggestion = async () => {
   await wait(500);
 
   const response = await fetch("movies.json");

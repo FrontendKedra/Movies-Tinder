@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "react-query";
-import { getMoviesSuggestion } from "../../../lib/getMovies";
+import { getMoviesSuggestion } from "../../../lib/getMoviesSuggestions";
 
 export const useMovieSuggestions = () => {
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
