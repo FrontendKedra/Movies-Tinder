@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "react-query";
-import { getMoviesSuggestion } from "../../../lib/getMoviesSuggestions";
+import { getMovieSuggestion } from "../../../lib/getMovieSuggestions";
 
 export const useMovieSuggestions = () => {
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   const { isLoading, data, isError } = useQuery(
     "movieDetails",
-    getMoviesSuggestion
+    getMovieSuggestion
   );
 
   const showNextMovie = () => {
@@ -60,7 +60,7 @@ export const useMovieSuggestions = () => {
     movie,
     isLoading,
     isError,
-    approveMovie: (id: string) => approveMovieMutation.mutate(id), // renamed to avoid conflict
-    rejectMovie: (id: string) => rejectMovieMutation.mutate(id), // renamed to avoid conflict
+    approveMovie: (id: string) => approveMovieMutation.mutate(id),
+    rejectMovie: (id: string) => rejectMovieMutation.mutate(id),
   };
 };
