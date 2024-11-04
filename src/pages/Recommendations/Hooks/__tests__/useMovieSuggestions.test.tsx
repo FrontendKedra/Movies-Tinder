@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, act } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import userEvent from "@testing-library/user-event";
 import { useMovieSuggestions } from "../useMovieSuggestions";
@@ -27,29 +27,35 @@ describe("useMovieSuggestions - PUT calls", () => {
 
   it("approves a movie suggestion", async () => {
     fetchMock.mockResponseOnce("", { status: 200 });
-    render(
-      <TestComponent movieId="1and3011" />,
-      { wrapper }
-    );
 
-    userEvent.click(screen.getByText("Approve"));
+    render(<TestComponent movieId="1and3011" />, { wrapper });
+
+    await act(async () => {
+      userEvent.click(screen.getByText("Approve"));
+    });
 
     await waitFor(() =>
-      expect(fetchMock).toHaveBeenLastCalledWith("/recommendations/1and3011/accept", { method: "PUT" })
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        "/recommendations/1and3011/accept",
+        { method: "PUT" }
+      )
     );
   });
 
   it("rejects a movie suggestion", async () => {
     fetchMock.mockResponseOnce("", { status: 200 });
-    render(
-      <TestComponent movieId="1and3011" />,
-      { wrapper }
-    );
 
-    userEvent.click(screen.getByText("Reject"));
+    render(<TestComponent movieId="1and3011" />, { wrapper });
+
+    await act(async () => {
+      userEvent.click(screen.getByText("Reject"));
+    });
 
     await waitFor(() =>
-      expect(fetchMock).toHaveBeenLastCalledWith("/recommendations/1and3011/reject", { method: "PUT" })
+      expect(fetchMock).toHaveBeenLastCalledWith(
+        "/recommendations/1and3011/reject",
+        { method: "PUT" }
+      )
     );
   });
 });
